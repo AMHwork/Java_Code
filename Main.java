@@ -3,27 +3,38 @@ package com.austinhua;
 public class Main {
 
     public static void main(String[] args) {
-        printFactors(6);
-        printFactors(32);
-        printFactors(10);
-        printFactors(-1);
+        double result;
+
+        result = area(5.0);
+        System.out.println(result);
+
+        result = area(-1);
+        System.out.println(result);
+
+        result = area(5.0, 4.0);
+        System.out.println(result);
+
+        result = area(-1.0,4.0);
+        System.out.println(result);
+
 
     }
 
-    public static void printFactors (int number){
-
-        if (number < 1){
-            System.out.println("Invalid Value");
+    public static double area (double radius){
+        if (radius < 0){
+            return -1;
         }
 
-        int counter = 1;
+        double area = Math.PI * (radius * radius);
+        return area;
+    }
 
-        while (counter <= number){
-            if (number % counter == 0){
-                System.out.println(counter);
-            }
-            counter++;
+    public static double area (double x, double y){
+        if (x < 0 || y < 0){
+            return -1;
         }
 
+        double area = x * y;
+        return area;
     }
 }
